@@ -4,7 +4,7 @@ from keras import backend as K
 
 from capsNet_layers import CapsuleLayer, PrimaryCaps, Length
 
-# Model of the Neurocomputing Journal.
+# Model of Kim, J. et al.
 def CapsNet(input_shape, n_classes, num_routings, vocab_size, embedding_dim, l2_ratio):
 	'''
 	A Capsule Network for Text Classification.
@@ -18,15 +18,11 @@ def CapsNet(input_shape, n_classes, num_routings, vocab_size, embedding_dim, l2_
 	embeddings = layers.Lambda(lambda x: K.expand_dims(x, axis=-1))(embeddings) # Reshape sequence for convolution.
 
 	# Non-linear gate layer.
-	# elu_layer = layers.Conv2D(filters=256, kernel_size=(3, embedding_dim),
-	# 	use_bias=False, kernel_regularizer=regularizers.l2(l2_ratio), activation=None)(embeddings)
 	elu_layer = layers.Conv2D(filters=256, kernel_size=(3, embedding_dim), strides=1,
 		use_bias=False, kernel_regularizer=regularizers.l2(l2_ratio), activation=None)(embeddings)
 	elu_layer = layers.BatchNormalization()(elu_layer)
 	elu_layer = layers.Activation('elu')(elu_layer)
 
-	# conv_layer = layers.Conv2D(filters=256, kernel_size=(3, embedding_dim),
-	# 	use_bias=False, kernel_regularizer=regularizers.l2(l2_ratio), activation=None)(embeddings)
 	conv_layer = layers.Conv2D(filters=256, kernel_size=(3, embedding_dim), strides=1,
 		use_bias=False, kernel_regularizer=regularizers.l2(l2_ratio), activation=None)(embeddings)
 	conv_layer = layers.BatchNormalization()(conv_layer)
@@ -59,10 +55,10 @@ def CapsNet(input_shape, n_classes, num_routings, vocab_size, embedding_dim, l2_
 	return model
 
 # # Original capsule networks (Hinton).
-# def CapsNet(input_shape, n_class, num_routings, vocab_size, embedding_dim, l2_ratio, max_len):
+# def CapsNet(input_shape, n_classes, num_routings, vocab_size, embedding_dim, l2_ratio, max_len):
 # 	"""
 # 	:param input_shape: data shape, 4d, [None, width, height, channels]
-# 	:param n_class: number of classes
+# 	:param n_classes: number of classes
 # 	:param num_routing: number of routing iterations
 # 	:param vocab_size:
 # 	:param embed_dim:
@@ -89,7 +85,7 @@ def CapsNet(input_shape, n_classes, num_routings, vocab_size, embedding_dim, l2_
 # 	print()
 
 # 	# Layer 4: Capsule layer. Routing algorithm works here.
-# 	category_caps = CapsuleLayer(num_capsule=n_class, dim_capsule=16, num_routings=num_routings, name='category_caps')(primary_caps)
+# 	category_caps = CapsuleLayer(num_capsule=n_classes, dim_capsule=16, num_routings=num_routings, name='category_caps')(primary_caps)
 
 # 	# Layer 5: This is an auxiliary layer to replace each capsule with its length. Just to match the true label's shape.
 # 	out_caps = Length(name='out_caps')(category_caps)
