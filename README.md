@@ -6,4 +6,4 @@ A Keras implementation of Capsule Networks in the paper:
 
 - The layer of the Capsule Networks was implemented by reading the paper.
   - [Sabour, S., Frosst, N., & Hinton, G. E. (2017). Dynamic routing between capsules. In Advances in neural information processing systems (pp. 3856-3866)](http://papers.nips.cc/paper/6975-dynamic-routing-between-capsules.pdf).
-- In order to understand and confirm the structure of the paper accurately, I verified and implemented it through the [author's GitHub](https://github.com/TeamLab/text-capsule-network).
+- In order to accurately understand and confirm the structure proposed in this paper, I confirmed and supplemented it through the [author's GitHub](https://github.com/TeamLab/text-capsule-network).
