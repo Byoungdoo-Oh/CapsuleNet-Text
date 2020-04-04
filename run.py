@@ -62,7 +62,7 @@ def train(model, train, test, save_dir, epochs, batch_size):
 		writer.writerow([str(p), str(t)])
 	f.close()
 
-	print(records.history.keys())
+	# print(records.history.keys())
 
 	# Summarize history for acc and loss.
 	plt.plot(records.history['accuracy'])
