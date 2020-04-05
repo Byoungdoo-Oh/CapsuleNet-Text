@@ -9,7 +9,7 @@ def CapsNet(input_shape, n_classes, num_routings, vocab_size, embedding_dim, l2_
 	'''
 	A Capsule Network for Text Classification.
 	: param input_shape : data shape, 3d, [width, height, channels].
-	: param n_class : number of class.
+	: param n_classes : number of class.
 	: param num_routings : number of routing iterations.
 	'''
 	input_seq = layers.Input(shape=input_shape)
