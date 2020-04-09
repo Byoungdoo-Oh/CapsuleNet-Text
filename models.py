@@ -4,7 +4,7 @@ from keras import backend as K
 
 from capsNet_layers import CapsuleLayer, PrimaryCaps, Length
 
-# Model of Kim, J. et al.
+# The Model proposed by J. Kim et al.
 def CapsNet(input_shape, n_classes, num_routings, vocab_size, embedding_dim, l2_ratio):
 	'''
 	A Capsule Network for Text Classification.
