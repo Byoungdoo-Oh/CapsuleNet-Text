@@ -116,7 +116,7 @@ if __name__ == '__main__':
 
 	X_train = tokenizer.texts_to_sequences(X_train)
 	X_test = tokenizer.texts_to_sequences(X_test)
-	VOCAB_SIZE = tokenizer.word_index
+	VOCAB_SIZE = len(tokenizer.word_index)
 
 	X_train = sequence.pad_sequences(X_train, maxlen=maxlen, padding='post')
 	X_test = sequence.pad_sequences(X_test, maxlen=maxlen, padding='post')
