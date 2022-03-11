@@ -8,10 +8,9 @@ A Keras implementation of Capsule Networks in the paper:
   - [Sabour, S., Frosst, N., & Hinton, G. E. (2017). Dynamic routing between capsules. In Advances in neural information processing systems (pp. 3856-3866)](http://papers.nips.cc/paper/6975-dynamic-routing-between-capsules.pdf).
 - In order to accurately understand and confirm the structure proposed in this paper, I confirmed and supplemented it through the [author's GitHub](https://github.com/TeamLab/text-capsule-network).
 - In Testing
-  - I tested this model with the [Naver Sentiment Movie Corpus (NSMC)](https://github.com/e9t/nsmc).
-    - This is a corpus for representative emotional analysis in Korean.
-  - I also tested with standard corpuses for text classification in English.
-    - Movie Review (MR) dataset, etc.
+  - I tested this model with the IMDB (Acc: 75.67%, Epoch: 5).
 - Version
-  - Keras == 2.3.1
-  - Tensorflow == 1.13.1
+  - Tensorflow == 2.4.1
+
+- How to use this code?
+  - After downloading the entire code, just run "run.py".
